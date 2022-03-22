@@ -1,0 +1,5 @@
+node_modules
+cosmwasm-rs
+tests
+build
+*DS_Store

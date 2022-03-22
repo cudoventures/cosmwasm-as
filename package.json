@@ -1,0 +1,32 @@
+{
+  "contributors": [
+    {
+      "name": "Simon Warta",
+      "url": "https://warta.it/"
+    }
+  ],
+  "license": "(WTFPL OR 0BSD OR Unlicense OR MIT OR BSD-3-Clause)",
+  "scripts": {
+    "lint": "eslint --max-warnings 0 \"**/*.{js,ts}\"",
+    "lint-fix": "yarn lint --fix",
+    "build:untouched": "asc src/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --runtime stub --use abort=src/cosmwasm-std/cosmwasm/logAndCrash --validate --debug",
+    "build:optimized": "asc src/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --runtime stub --use abort=src/cosmwasm-std/cosmwasm/logAndCrash --validate --optimize",
+    "build": "yarn build:untouched",
+    "test": "asp --nologo"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@as-pect/cli": "^6.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "assemblyscript": "^0.19.23",
+    "assemblyscript-json": "^1.1.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.6.2"
+  }
+}
